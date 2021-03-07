@@ -4,7 +4,7 @@ from Downloadm4a import m4aDownloader
 from Move_Song import moveSongs
 from getPath import *
 import time
-
+from Downloadmp4 import mp4Downloader
 
 # Main program function
 if __name__ == '__main__':
@@ -20,8 +20,10 @@ if __name__ == '__main__':
 
     if choice == "1":
         mp3Downloader(url)
-    else:
+    elif choice == "2:
         m4aDownloader(url)
+    else:
+        mp4Downloader(url)
 
     # Getting curent directory and future directory to move the song
     sourcePath = getsrcPath()
