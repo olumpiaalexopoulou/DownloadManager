@@ -7,6 +7,6 @@ def getsrcPath():
     return os.getcwd()
 
 
-def getdstPAth():
+def getdstPath():
     # Returning the destination directory
     return str(Path.home()/"Downloads")
