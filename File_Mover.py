@@ -17,13 +17,7 @@ def moveSongs(source, destination):
             shutil.move(src, dst)
 
         # Searching for the .m4a file thenn moving it to the new directory
-        if file.endswith('.m4a'):
-            oldfile = file
-            src = os.path.join(source, oldfile)
-            dst = os.path.join(destination, file)
-            shutil.move(src, dst)
-
-        if file.endswith('.mp4'):
+        if (file.endswith('.m4a')) or (file.endswith('.mp4')):
             oldfile = file
             src = os.path.join(source, oldfile)
             dst = os.path.join(destination, file)
