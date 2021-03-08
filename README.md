@@ -1,5 +1,5 @@
 # Desktop Download Manager
-    Simple desktop download manager supporting audio and video files YouTube
+    Simple desktop download manager supporting audio and video files from YouTube
 
 # Development Team
     Αλεξοπούλου Ολυμπία-Στεργιανή @olumpiaalexopoulou
