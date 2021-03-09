@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
     # Getting the user's choise
     choice = input("Choose .mp3, .m4a or .mp4 [1] or [2] or [3]:")
-    url = 'https://www.youtube.com/watch?v=HdWw9SksiwQ&list=PLt04BbU3ELLD6Tq9HKpPJCeh6ZK7sB9p5'
+    url = 'https://www.youtube.com/watch?v=_cKHn_tMukg'  # no copyright song
 
     if choice == "1":
         mp3Downloader(url)
