@@ -9,18 +9,18 @@ def moveSongs(source, destination):
     for file in content:
 
         # Searching for the .mp3 file, renaming it and moving it to the new directory
-        if file.endswith('.mp3'):
+        if file.endswith('.mp3') or file.endswith('.mkv'):
             oldfile = file
             file = remove_unwanted_letters(file)
+            # file.os.path.splitext(file)[0]+".mp3"
             src = os.path.join(source, oldfile)
             dst = os.path.join(destination, file)
             shutil.move(src, dst)
 
         # Searching for the .m4a file then moving it to the new directory
-        if (file.endswith('.m4a')) or (file.endswith('.mp4')):
+        if (file.endswith('.m4a')) or (file.endswith('.mp4')) or (file.endswith('.webm')):
             oldfile = file
-            file = os.path.splitext(file)[0]+".mp3"
-            #file.replace('.m4a', '.mp3')
+            file = os.path.splitext(file)[0] + ".mp3"
             src = os.path.join(source, oldfile)
             dst = os.path.join(destination, file)
             shutil.move(src, dst)

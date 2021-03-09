@@ -4,7 +4,7 @@ from Downloadm4a import m4aDownloader
 from Downloadmp4 import mp4Downloader
 from File_Mover import moveSongs
 from getPath import *
-import time
+#import time
 
 
 # Main program function
@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
     # Getting the user's choise
     choice = input("Choose .mp3, .m4a or .mp4 [1] or [2] or [3]:")
-    url = 'https://www.youtube.com/watch?v=2UKTSEUL5kQ'
+    url = 'https://www.youtube.com/watch?v=HdWw9SksiwQ&list=PLt04BbU3ELLD6Tq9HKpPJCeh6ZK7sB9p5'
 
     if choice == "1":
         mp3Downloader(url)
@@ -26,7 +26,7 @@ if __name__ == '__main__':
     else:
         mp4Downloader(url)
 
-    # Getting curent directory and future directory to move the song
+    # Getting curent directory and destination directory to move the song
     sourcePath = getsrcPath()
     destinationPath = getdstPath()
 
