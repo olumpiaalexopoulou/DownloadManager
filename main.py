@@ -1,7 +1,9 @@
 from __future__ import unicode_literals
 from DownloadAudio import AudioDownloader
 from DownloadVideo import VideoDownloader
+from SearchSong import GetSongUrl
 from FileMover import moveSongs
+from GetSongFromTXT import *
 from GetPath import *
 
 
@@ -10,11 +12,19 @@ if __name__ == '__main__':
 
     print("Welcome!!!")
 
-    #url = input("Enter the video url:")
+    dm = input(
+        "Please select download method:\n[1] Download via search\n[2] Download via link\n[3] Download via songlist\nEnter method number:")
 
     # Getting the user's choise
-    choice = input("Choose .mp3, .m4a or .mp4 [1] or [2] or [3]:")
-    url = 'https://www.youtube.com/watch?v=_cKHn_tMukg'  # no copyright song
+    choice = input(
+        "PLease select file format\n[1] .mp3\n[2] .m4a\n[3] .mp4\nEnter your prefered format number:")
+    if dm == "1":
+        songname = input("Enter the song's name:")
+        url = GetSongUrl(songname)
+    elif dm == "2":
+        url = input("Enter the video's url:")
+    else:
+        url = SongList()
 
     if (choice == "1") or (choice == "2"):
         AudioDownloader(url)
