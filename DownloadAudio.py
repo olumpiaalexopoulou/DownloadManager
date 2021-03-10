@@ -3,6 +3,7 @@ import pafy
 
 def AudioDownloader(url):
 
-    # calling the 'new' method of pafy and downloading the best audio quality song
-    for u in url:
-        result = pafy.new(u).getbestaudio().download()
+    # Xrisimopoioyme to loop se periptosi poy yparxoun perissotera apo ena tragoudia
+    # Me me tin methodo new kai thn getbestaudio katebazoume thn kalhterh poothta ixoy apo to YouTube
+    # for u in url:
+    result = pafy.new(url).getbestaudio().download()
