@@ -3,10 +3,10 @@ from pathlib import Path
 
 
 def getsrcPath():
-    # Returning the current directory
+    # Epistrefei to current directoy
     return os.getcwd()
 
 
 def getdstPath():
-    # Returning the destination directory
+    # Epistrefei to teliko directory
     return str(Path.home()/"Downloads")

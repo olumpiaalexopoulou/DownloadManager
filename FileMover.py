@@ -4,18 +4,18 @@ import shutil
 
 
 def moveSongs(source, destination, choice):
-    os.chdir(source)
-    content = os.listdir()  # list all files in current directory
+    os.chdir(source)  # Allazei to directory se ayto pou briskonte ta arxeia
+    content = os.listdir()  # Deixnei ola ta arxeia sto current directory
     for file in content:
 
-        # Searching for the .mp4 file and moving it to the new directory
+        # Psaxnei gia mp4 arxeia kai ta metaferei se neo directory
         if file.endswith('.mp4'):
             oldfile = file
             src = os.path.join(source, oldfile)
             dst = os.path.join(destination, file)
             shutil.move(src, dst)
 
-        # Searching for audio file, converting it and then moving it to the new directory
+        # Psaxnei gia arxeia ixou, ta metaonomazei otan einai aparaitito kai ta metaferei se neo directory
         if (file.endswith('.m4a')) or (file.endswith('.webm') or (file.endswith('.3gp'))):
             oldfile = file
             if (choice == "1"):
