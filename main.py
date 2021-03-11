@@ -10,6 +10,7 @@ from GetPath import *
 # Main program function
 if __name__ == '__main__':
 
+    url = []  # initialize url list
     print("Welcome to OcEAN's desktop youtube downloader!!!")
 
     sourcePath = getsrcPath()  # kanei initialize to directory tis efarmogis
@@ -26,15 +27,15 @@ if __name__ == '__main__':
         # O xristis briskei to tragoudi pou thelei basei titlou kai sthn synexeia kaleitai i sinartisi GetSongUrl gia na brethei
         # to link tou epilegmenoy tragoydiou
         songname = input("Enter the song's name:")
-        url = GetSongUrl(songname)
+        url.append(GetSongUrl(songname))
 
     elif dm == "2":
         # O xristis bazei kateutheian to link apo to tragoudi poy epithimei na katebasei
-        url = input("Enter the video's url:")
+        url.append(input("Enter the video's url:"))
 
     else:
         # To programma fortonei automata ta tragoudia apo thn playlist poy exei ftiaksei o idios o xristis
-        url = SongList()
+        url = (SongList())
 
     print("Where do you want to save your file?")
     # rotaei ton xristi gia to directory pou thelei na apothikeusei to arxeio
