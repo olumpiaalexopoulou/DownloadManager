@@ -12,6 +12,8 @@ if __name__ == '__main__':
 
     print("Welcome to OcEAN's desktop youtube downloader!!!")
 
+    sourcePath = getsrcPath()  # kanei initialize to directory tis efarmogis
+
     # dm = download method,menu sto opoio o xristis apofasizei ton tropo me ton opoio yhelei na katebasei ta arxeia tou
     dm = input(
         "Please select download method:\n[1] Download via search\n[2] Download via link\n[3] Download via songlist\nEnter method number:")
@@ -34,6 +36,11 @@ if __name__ == '__main__':
         # To programma fortonei automata ta tragoudia apo thn playlist poy exei ftiaksei o idios o xristis
         url = SongList()
 
+    print("Where do you want to save your file?")
+    # rotaei ton xristi gia to directory pou thelei na apothikeusei to arxeio
+    destinationPath = getdstPath()
+    print(destinationPath, " is selected as download directory")
+
     if (choice == "1") or (choice == "2"):
         # Kaleitai i sinartisi me to url gia na kateboun ta arxeia ixou
         AudioDownloader(url)
@@ -41,10 +48,6 @@ if __name__ == '__main__':
     else:
         # Kaleitai i sinartisi me to url gia na kateboun ta arxeia video
         VideoDownloader(url)
-
-    # Oi dio parakato sinartisis einai upethines gia ta directories tis efarmogis
-    sourcePath = getsrcPath()
-    destinationPath = getdstPath()
 
     # Metafora ton arxeion sto katallilo directory
     moveSongs(sourcePath, destinationPath, choice)
