@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+from tkinter import filedialog
 
 
 def getsrcPath():
@@ -9,4 +10,6 @@ def getsrcPath():
 
 def getdstPath():
     # Epistrefei to teliko directory
-    return str(Path.home()/"Downloads")
+    # return str(Path.home()/"Downloads")
+    save_directory = filedialog.askdirectory()
+    return save_directory
