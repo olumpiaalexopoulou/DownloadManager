@@ -1,4 +1,5 @@
-from tkinter import *
+from tkinter import Frame,Tk, Entry,Button,NONE
+#from tkinter import tk, Entry,Button
 from tkinter import messagebox
 
 root = Tk()
@@ -12,26 +13,28 @@ def SearchWindow():
     w.place(x=0, y=28)
 
     # entrybox
+    '''
     def on_entry(e):
         s.delete(0, 'end')
 
     def on_leave(e):
         if s.get() == "":
             s.insert(0, "Search Song")
-
+    '''
     s = Entry(w, width=30, fg="grey")
-    s.configure(font=("Consolas", 10, "bold"))
-    s.bind("<FocusIn>", on_entry)
-    s.bind("<FocusIn>", on_leave)
-    s.insert(0, "Search Song")
-    s.place(x=70, y=42)
+    #s.configure(font=("Consolas", 5, "bold"))
+    #s.bind("<FocusIn>", on_entry)
+    #s.bind("<FocusIn>", on_leave)
+    #s.insert(0, "Search Song")
+    s.place(x=100, y=42)
+    
 
     # entry box for options
     o = Entry(w, width=30, fg="black")
-    o.place(x=70, y=92)
+    o.place(x=100, y=92)
 
-    Button(w, width=20, height=0, text="Download", command=NONE,
-           border=0, bg='light blue', fg='white').place(x=105, y=142)
+    Button(w, width=19, height=0, text="Download", command=NONE,
+           border=0, bg='light blue', fg='white').place(x=133, y=142)
 
 
 def LinkWindow():
@@ -59,7 +62,7 @@ def LinkWindow():
     o1.place(x=70, y=92)
 
     Button(q, width=20, height=0, text="Download", command=NONE,
-           border=0, bg='light blue', fg='white').place(x=105, y=142)
+           border=0, bg='light blue', fg='white').place(x=133, y=142)
 
 
 def CustomPlaylist():
@@ -94,15 +97,15 @@ CustomPlaylist()
 SearchWindow()
 
 
-Button(root, width=10, height=0, text="Search", command=SearchWindow, border=0, bg='#003F87', pady=4,
+Button(root, width=19, height=0, text="Search", command=SearchWindow, border=0, bg='#003F87', pady=4,
        fg='white', activebackground='#003F87', activeforeground='#003F87').place(x=0, y=0)
 
 
-Button(root, width=10, height=0, text="Link", command=LinkWindow, border=0, bg='purple',
+Button(root, width=19, height=0, text="Link", command=LinkWindow, border=0, bg='purple',pady=4,
        fg='white', activebackground='purple', activeforeground='white').place(x=133, y=0)
 
 
-Button(root, width=10, height=0, text="Playlist", command=CustomPlaylist, border=0, bg='red',
+Button(root, width=19, height=0, text="Playlist", command=CustomPlaylist, border=0, bg='red',pady=4,
        fg='white', activebackground='red', activeforeground='white').place(x=266, y=0)
 
 
