@@ -89,20 +89,20 @@ def CustomPlaylist():
            border=0, bg='light blue', fg='white').place(x=105, y=142)
 
 
-SearchWindow()
 LinkWindow()
 CustomPlaylist()
+SearchWindow()
 
 
-Button(root, width=20, height=0, text="Search              ", command=SearchWindow, border=0, bg='#003F87', pady=4,
-       fg='white', activebackground='#003F87', activeforeground='white').place(x=0, y=0)
+Button(root, width=10, height=0, text="Search", command=SearchWindow, border=0, bg='#003F87', pady=4,
+       fg='white', activebackground='#003F87', activeforeground='#003F87').place(x=0, y=0)
 
 
-Button(root, width=20, height=0, text="Link               ", command=LinkWindow, border=0, bg='purple',
+Button(root, width=10, height=0, text="Link", command=LinkWindow, border=0, bg='purple',
        fg='white', activebackground='purple', activeforeground='white').place(x=133, y=0)
 
 
-Button(root, width=13, height=0, text="Playlist", command=CustomPlaylist, border=0, bg='red',
+Button(root, width=10, height=0, text="Playlist", command=CustomPlaylist, border=0, bg='red',
        fg='white', activebackground='red', activeforeground='white').place(x=266, y=0)
 
 
