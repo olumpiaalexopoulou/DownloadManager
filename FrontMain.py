@@ -1,6 +1,7 @@
 from tkinter import Frame,Tk, Entry,Button,NONE,filedialog,messagebox
 from BackMain import down
 from pathlib import Path
+import os
 
 root = Tk()
 root.geometry('400x240')
@@ -120,17 +121,28 @@ def CustomPlaylist():
     cp.insert(0, "Search Song")
     '''
     #cp.place(x=100, y=42)
+    
     def openfile():
-        c.filename=filedialog.askopenfilename(initialdir=str(Path.home()/"Desktop"),title="Select a file",filetypes=("txt files","*.txt"))
-        songlist=c.filename
-        return songlist
+        c.songlist=filedialog.askopenfilename()
+        p=Path(c.songlist)
+        c.directory=p.parent
+        return c.directory
+        
+
+
+    def filetypebar():
+        ch=o2.get()
+        return ch
+
+    def calldown(dm,video_type,user_input):
+        down(dm,video_type,user_input)
 
     # entry box for options
     o2 = Entry(c, width=30, fg="black")
     o2.place(x=100, y=92)
 
     Button(c,width=20,height=0,text="Select File",command=lambda:openfile(),border=0,bg='orange',fg='white').place(x=100,y=42)
-    Button(c, width=20, height=0, text="Download", command=NONE,
+    Button(c, width=20, height=0, text="Download", command=lambda:calldown('3',filetypebar(),c.directory),
            border=0, bg='light blue', fg='white').place(x=120, y=142)
 
 

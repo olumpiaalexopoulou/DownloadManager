@@ -35,7 +35,7 @@ def down(dm,video_type,user_input):
 
     else:
         # To programma fortonei automata ta tragoudia apo thn playlist poy exei ftiaksei o idios o xristis
-        url = (SongList())
+        url = (SongList(user_input))
 
     #print("Where do you want to save your file?")
     # rotaei ton xristi gia to directory pou thelei na apothikeusei to arxeio
@@ -51,6 +51,6 @@ def down(dm,video_type,user_input):
         VideoDownloader(url)
 
     # Metafora ton arxeion sto katallilo directory
-    moveSongs(sourcePath, destinationPath, video_type)
+    moveSongs(user_input, destinationPath, video_type)
     # Emfanizei sto xristi se poion fakelo briskontai ta arxeia tou
-    #print("Your file is at:", destinationPath)
+    print("Your file is at:", destinationPath)
