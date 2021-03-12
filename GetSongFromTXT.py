@@ -1,4 +1,4 @@
-from SearchSong import *
+from SearchSong import GetSongUrl
 from pathlib import Path
 import os
 

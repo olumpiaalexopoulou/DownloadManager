@@ -1,10 +1,12 @@
 from __future__ import unicode_literals
 from DownloadAudio import AudioDownloader
 from DownloadVideo import VideoDownloader
+from GetPath import getsrcPath,getdstPath
+from GetSongFromTXT import SongList
 from SearchSong import GetSongUrl
 from FileMover import moveSongs
-from GetSongFromTXT import *
-from GetPath import *
+
+
 
 
 # Main program function
