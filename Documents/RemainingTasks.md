@@ -1,11 +1,11 @@
-1)File uploader
+[x] File uploader
 
-2)Download via custom playlist
+[x] Download via custom playlist 
 
-3)New file for checkpoint
+[x] New file for checkpoint
 
-4)Style Changes
+[x] Style Changes
 
-5)Dropdown menu
+[x] Dropdown menu
 
-6)Add comments
+[x] Add comments
