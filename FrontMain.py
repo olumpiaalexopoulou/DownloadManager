@@ -1,4 +1,4 @@
-from tkinter import Frame,Tk, Entry,Button,NONE,filedialog,messagebox,StringVar,OptionMenu
+from tkinter import Frame,Tk, Entry,Button,NONE,filedialog,messagebox,StringVar,OptionMenu,ttk
 from BackMain import down
 from pathlib import Path
 import os
@@ -10,11 +10,9 @@ root.title("Download Manager")
 
 
 #Dropdown menu
-options=[
-    "mp3",
-    "m4a",
-    "mp4"
-]
+
+    
+
 
 
 
@@ -37,16 +35,22 @@ def SearchWindow():
         return search
 
     def filetypebar():
-        ch=click.get()
+        ch=n.get()
         return ch
 
     def calldown(dm,video_type,user_input):
         down(dm,video_type,user_input)
-        
-    click=StringVar()
-    click.set(options[0])
-    drop=OptionMenu(w,click,*options)
-    drop.place(x=160,y=92)
+
+
+
+    n=StringVar()
+    options = ttk.Combobox(w, width = 10, textvariable = n)
+    options["values"]=(
+    "mp3",
+    "m4a",
+    "mp4")
+    options.current()
+    options.place(x=150,y=92)
 
 
 
@@ -60,12 +64,8 @@ def SearchWindow():
     s.place(x=100, y=42)
     
 
-    # entry box for options
-    #o = Entry(w, width=30, fg="black")
-    #o.place(x=100, y=92)
-
     Button(w, width=20, height=0, text="Download", command=lambda:calldown('1',filetypebar(),searchbar()),
-           border=0, bg='light blue', fg='white').place(x=120, y=142)
+           border=0, bg='light blue', fg='#ffffff').place(x=120, y=142)
 
 
 
@@ -99,22 +99,25 @@ def LinkWindow():
         return search
 
     def filetypebar():
-        ch=click1.get()
+        ch=n.get()
         return ch
 
     def calldown(dm,video_type,user_input):
         down(dm,video_type,user_input)
 
-    # entry box for options
-    #o1 = Entry(q, width=30, fg="black")
-    #o1.place(x=100, y=92)
-    click1=StringVar()
-    click1.set(options[0])
-    drop=OptionMenu(q,click1,*options)
-    drop.place(x=160,y=92)
+    
+    n=StringVar()
+    options = ttk.Combobox(q, width = 10, textvariable = n)
+
+    options["values"]=(
+    "mp3",
+    "m4a",
+    "mp4")
+    options.current()
+    options.place(x=150,y=92)
 
     Button(q, width=20, height=0, text="Download", command=lambda:calldown('1',filetypebar(),searchbar()),
-           border=0, bg='light blue', fg='white').place(x=120, y=142)
+           border=0, bg='light blue', fg='#ffffff').place(x=120, y=142)
 
 
 def CustomPlaylist():
@@ -128,24 +131,26 @@ def CustomPlaylist():
         return c.directory
         
     def filetypebar():
-        ch=click2.get()
+        ch=n.get()
         return ch
 
     def calldown(dm,video_type,user_input):
         down(dm,video_type,user_input)
 
-    # entry box for options
-    #o2 = Entry(c, width=30, fg="black")
-    #o2.place(x=100, y=92)
+    
+    n=StringVar()
+    options = ttk.Combobox(c, width = 10, textvariable = n)
 
-    click2=StringVar()
-    click2.set(options[0])
-    drop=OptionMenu(c,click2,*options)
-    drop.place(x=160,y=92)
+    options["values"]=(
+    "mp3",
+    "m4a",
+    "mp4")
+    options.current()
+    options.place(x=150,y=92)
 
-    Button(c,width=20,height=0,text="Select File",command=lambda:openfile(),border=0,bg='orange',fg='white').place(x=120,y=42)
+    Button(c,width=20,height=0,text="Select File",command=lambda:openfile(),border=0,bg='#ffffff',fg='red').place(x=120,y=42)
     Button(c, width=20, height=0, text="Download", command=lambda:calldown('3',filetypebar(),c.directory),
-           border=0, bg='light blue', fg='white').place(x=120, y=142)
+           border=0, bg='light blue', fg='#ffffff').place(x=120, y=142)
 
 
 LinkWindow()
@@ -155,15 +160,15 @@ SearchWindow()
 
 
 Button(root, width=19, height=0, text="Search", command=SearchWindow, border=0, bg='#003F87', pady=4,
-       fg='white', activebackground='#003F87', activeforeground='#003F87').place(x=0, y=0)
+       fg='#ffffff', activebackground='#003F87', activeforeground='#003F87').place(x=0, y=0)
 
 
 Button(root, width=19, height=0, text="Link", command=LinkWindow, border=0, bg='purple',pady=4,
-       fg='white', activebackground='purple', activeforeground='white').place(x=133, y=0)
+       fg='#ffffff', activebackground='purple', activeforeground='#ffffff').place(x=133, y=0)
 
 
 Button(root, width=19, height=0, text="Playlist", command=CustomPlaylist, border=0, bg='red',pady=4,
-       fg='white', activebackground='red', activeforeground='white').place(x=266, y=0)
+       fg='#ffffff', activebackground='red', activeforeground='#ffffff').place(x=266, y=0)
 
 
 root.mainloop()
