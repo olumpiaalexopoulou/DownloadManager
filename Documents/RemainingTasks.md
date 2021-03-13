@@ -1,11 +1,9 @@
-- File uploader
-
-- Download via custom playlist 
-
-- New file for checkpoint
+ - New file for checkpoint
 
 - Style Changes
 
-- Dropdown menu
-
 - Add comments
+
+- Break FrontMain (optional)
+
+- Add dialog windows for downloaded files
