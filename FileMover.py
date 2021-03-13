@@ -19,9 +19,9 @@ def moveSongs(source, destination, choice):
         # Psaxnei gia arxeia ixou, ta metaonomazei otan einai aparaitito kai ta metaferei se neo directory
         if (file.endswith('.m4a')) or (file.endswith('.webm') or (file.endswith('.3gp'))):
             oldfile = file
-            if (choice == "1"):
+            if (choice == "mp3"):
                 file = os.path.splitext(file)[0] + ".mp3"
-            if (choice == "2"):
+            if (choice == "m4a"):
                 file = os.path.splitext(file)[0]+".m4a"
             src = os.path.join(source, oldfile)
             dst = os.path.join(destination, file)
