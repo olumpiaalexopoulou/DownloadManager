@@ -2,15 +2,10 @@
 
 - Download via custom playlist 
 
-[ ] New file for checkpoint
+- New file for checkpoint
 
-4)Style Changes
+- Style Changes
 
-5)Dropdown menu
+- Dropdown menu
 
-6)Add comments
-
-
-[ ] A
-[x] B
-[ ] C
+- Add comments
