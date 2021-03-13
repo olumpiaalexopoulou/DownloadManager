@@ -9,3 +9,8 @@
 5)Dropdown menu
 
 6)Add comments
+
+
+[ ] A
+[x] B
+[ ] C
