@@ -2,7 +2,7 @@
 
 - Download via custom playlist 
 
-[] New file for checkpoint
+[ ] New file for checkpoint
 
 4)Style Changes
 
