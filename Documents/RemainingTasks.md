@@ -1,6 +1,6 @@
 - New file for checkpoint
 
-- Style Changes
+- Change colors
 
 - Add comments
 
