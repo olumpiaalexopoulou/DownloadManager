@@ -1,5 +1,5 @@
-from tkinter import Frame,Tk, Entry,Button,NONE,filedialog,messagebox,StringVar,OptionMenu,ttk
-from BackMain import down
+from tkinter import Frame, Tk, Entry, Button, NONE, filedialog, messagebox, StringVar, OptionMenu, ttk
+from BackMain import download_files
 from pathlib import Path
 import os
 
@@ -16,11 +16,11 @@ def SearchWindow():
     # entrybox
     
     def searchbar():
-        search=s.get()
+        search = s.get()
         return search
 
     def filetypebar():
-        ch=n.get()
+        ch = n.get()
         return ch
 
     def calldown(dm,video_type,user_input):
@@ -36,7 +36,7 @@ def SearchWindow():
     "mp4")
     
     options.current()
-    options.place(x=150,y=92)
+    options.place(x=150, y=92)
 
     # def on_entry(e):
     #     s.delete(0, 'end')
@@ -53,11 +53,9 @@ def SearchWindow():
     # s.insert(0, "Search Song")
     
     s.place(x=100, y=42)
-    
 
     Button(w, width=20, height=0, text="Download", command=lambda:calldown('1',filetypebar(),searchbar()),
            border=0, bg='#ffffff', fg='#000000').place(x=120, y=142)
-
 
 
 def LinkWindow():
@@ -83,29 +81,30 @@ def LinkWindow():
     
     l.place(x=100, y=42)
 
-    
+    # l.configure(font=("Consolas", 10, "bold"))
+    # l.bind("<FocusIn>", on_entry)
+    # l.bind("<FocusIn>", on_leave)
+    # l.insert(0, "Search Song")
+
+    l.place(x=100, y=42)
 
     def searchbar():
-        search=l.get()
+        search = l.get()
         return search
 
     def filetypebar():
-        ch=n.get()
+        ch = n.get()
         return ch
 
-    def calldown(dm,video_type,user_input):
-        down(dm,video_type,user_input)
+    n = StringVar()
+    options = ttk.Combobox(q, width=10, textvariable=n)
 
-    
-    n=StringVar()
-    options = ttk.Combobox(q, width = 10, textvariable = n)
-
-    options["values"]=(
-    "mp3",
-    "m4a",
-    "mp4")
+    options["values"] = (
+        "mp3",
+        "m4a",
+        "mp4")
     options.current()
-    options.place(x=150,y=92)
+    options.place(x=150, y=92)
 
     Button(q, width=20, height=0, text="Download", command=lambda:calldown('1',filetypebar(),searchbar()),
            border=0, bg='#ffffff', fg='#000000').place(x=120, y=142)
@@ -114,30 +113,26 @@ def LinkWindow():
 def CustomPlaylist():
     c = Frame(root, width=400, height=240, bg='#519bb1')
     c.place(x=0, y=28)
-    
+
     def openfile():
-        c.songlist=filedialog.askopenfilename()
-        p=Path(c.songlist)
-        c.directory=p.parent
+        c.songlist = filedialog.askopenfilename()
+        p = Path(c.songlist)
+        c.directory = p.parent
         return c.directory
-        
+
     def filetypebar():
-        ch=n.get()
+        ch = n.get()
         return ch
 
-    def calldown(dm,video_type,user_input):
-        down(dm,video_type,user_input)
+    n = StringVar()
+    options = ttk.Combobox(c, width=10, textvariable=n)
 
-    
-    n=StringVar()
-    options = ttk.Combobox(c, width = 10, textvariable = n)
-
-    options["values"]=(
-    "mp3",
-    "m4a",
-    "mp4")
+    options["values"] = (
+        "mp3",
+        "m4a",
+        "mp4")
     options.current()
-    options.place(x=150,y=92)
+    options.place(x=150, y=92)
 
     Button(c,width=20,height=0,text="Select File",command=lambda:openfile(),border=0,bg='#ffffff',fg='#000000').place(x=120,y=42)
     Button(c, width=20, height=0, text="Download", command=lambda:calldown('3',filetypebar(),c.directory),
