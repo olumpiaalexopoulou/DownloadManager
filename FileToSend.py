@@ -5,7 +5,7 @@ import pafy
 
 def AudioDownloader(url):
 
-    # Me me tin methodo new kai thn getbestaudio katebazoume thn kalhterh poothta ixoy apo to YouTube
+    # Me me tin methodo new kai thn getbestaudio katebazoume tin kaliteri poiotita ixou apo to YouTube
     pafy.new(url).getbestaudio().download()
 
 
