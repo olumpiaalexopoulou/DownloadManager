@@ -9,9 +9,6 @@ root.resizable(0, 0)
 root.title("Download Manager")
 
 
-# Dropdown menu
-
-
 def SearchWindow():
     w = Frame(root, width=400, height=240, bg='#003F87')
     w.place(x=0, y=28)
