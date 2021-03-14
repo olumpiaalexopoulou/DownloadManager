@@ -23,11 +23,7 @@ def SearchWindow():
         ch = n.get()
         return ch
 
-    def calldown(dm,video_type,user_input):
-        down(dm,video_type,user_input)
-
-
-
+    
     n=StringVar()
     options = ttk.Combobox(w, width = 10, textvariable = n)
     options["values"]=(
@@ -38,23 +34,10 @@ def SearchWindow():
     options.current()
     options.place(x=150, y=92)
 
-    # def on_entry(e):
-    #     s.delete(0, 'end')
-
-    # def on_leave(e):
-    #     if s.get() == " ":
-    #         s.insert(0, "Search Song")
-
     s = Entry(w, width=30, fg="grey")
-    
-    # s.configure(font=("Consolas", 10, "bold"))
-    # s.bind("<FocusIn>", on_entry)
-    # s.bind("<FocusIn>", on_leave)
-    # s.insert(0, "Search Song")
-    
     s.place(x=100, y=42)
 
-    Button(w, width=20, height=0, text="Download", command=lambda:calldown('1',filetypebar(),searchbar()),
+    Button(w, width=20, height=0, text="Download", command=lambda:download_files('1',filetypebar(),searchbar()),
            border=0, bg='#ffffff', fg='#000000').place(x=120, y=142)
 
 
@@ -62,30 +45,9 @@ def LinkWindow():
     q = Frame(root, width=400, height=240, bg='#077190')
     q.place(x=0, y=28)
 
-    # entrybox
     
-    # def on_entry(e):
-    #     l.delete(0, 'end')
-
-    # def on_leave(e):
-    #     if l.get() == "":
-    #         l.insert(0, "Search Song")
-    
-
     l = Entry(q, width=30, fg="grey")
-    
-    # l.configure(font=("Consolas", 10, "bold"))
-    # l.bind("<FocusIn>", on_entry)
-    # l.bind("<FocusIn>", on_leave)
-    # l.insert(0, "Search Song")
-    
     l.place(x=100, y=42)
-
-    # l.configure(font=("Consolas", 10, "bold"))
-    # l.bind("<FocusIn>", on_entry)
-    # l.bind("<FocusIn>", on_leave)
-    # l.insert(0, "Search Song")
-
     l.place(x=100, y=42)
 
     def searchbar():
@@ -106,7 +68,7 @@ def LinkWindow():
     options.current()
     options.place(x=150, y=92)
 
-    Button(q, width=20, height=0, text="Download", command=lambda:calldown('1',filetypebar(),searchbar()),
+    Button(q, width=20, height=0, text="Download", command=lambda:download_files('1',filetypebar(),searchbar()),
            border=0, bg='#ffffff', fg='#000000').place(x=120, y=142)
 
 
@@ -135,7 +97,7 @@ def CustomPlaylist():
     options.place(x=150, y=92)
 
     Button(c,width=20,height=0,text="Select File",command=lambda:openfile(),border=0,bg='#ffffff',fg='#000000').place(x=120,y=42)
-    Button(c, width=20, height=0, text="Download", command=lambda:calldown('3',filetypebar(),c.directory),
+    Button(c, width=20, height=0, text="Download", command=lambda:download_files('3',filetypebar(),c.directory),
            border=0, bg='#ffffff', fg='#000000').place(x=120, y=142)
 
 
