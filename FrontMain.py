@@ -5,6 +5,7 @@ import os
 
 root = Tk()
 root.geometry('400x240')
+root.iconbitmap(r"wave.ico")
 root.resizable(0, 0)
 root.title("Download Manager")
 
