@@ -1,5 +1,4 @@
 from __future__ import unicode_literals
-from pytube import YouTube
 import pafy
 
 
