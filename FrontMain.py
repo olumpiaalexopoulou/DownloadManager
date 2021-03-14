@@ -1,5 +1,5 @@
 from tkinter import Frame, Tk, Entry, Button, NONE, filedialog, messagebox, StringVar, OptionMenu, ttk
-from BackMain import down
+from BackMain import download_files
 from pathlib import Path
 import os
 
@@ -30,9 +30,6 @@ def SearchWindow():
         ch = n.get()
         return ch
 
-    def calldown(dm, video_type, user_input):
-        down(dm, video_type, user_input)
-
     n = StringVar()
     options = ttk.Combobox(w, width=10, textvariable=n)
     options["values"] = (
@@ -51,7 +48,7 @@ def SearchWindow():
 
     s.place(x=100, y=42)
 
-    Button(w, width=20, height=0, text="Download", command=lambda: calldown('1', filetypebar(), searchbar()),
+    Button(w, width=20, height=0, text="Download", command=lambda: download_files('1', filetypebar(), searchbar()),
            border=0, bg='light blue', fg='#ffffff').place(x=120, y=142)
 
 
@@ -85,9 +82,6 @@ def LinkWindow():
         ch = n.get()
         return ch
 
-    def calldown(dm, video_type, user_input):
-        down(dm, video_type, user_input)
-
     n = StringVar()
     options = ttk.Combobox(q, width=10, textvariable=n)
 
@@ -98,7 +92,7 @@ def LinkWindow():
     options.current()
     options.place(x=150, y=92)
 
-    Button(q, width=20, height=0, text="Download", command=lambda: calldown('1', filetypebar(), searchbar()),
+    Button(q, width=20, height=0, text="Download", command=lambda: download_files('2', filetypebar(), searchbar()),
            border=0, bg='light blue', fg='#ffffff').place(x=120, y=142)
 
 
@@ -116,9 +110,6 @@ def CustomPlaylist():
         ch = n.get()
         return ch
 
-    def calldown(dm, video_type, user_input):
-        down(dm, video_type, user_input)
-
     n = StringVar()
     options = ttk.Combobox(c, width=10, textvariable=n)
 
@@ -131,7 +122,7 @@ def CustomPlaylist():
 
     Button(c, width=20, height=0, text="Select File", command=lambda: openfile(
     ), border=0, bg='#ffffff', fg='red').place(x=120, y=42)
-    Button(c, width=20, height=0, text="Download", command=lambda: calldown('3', filetypebar(), c.directory),
+    Button(c, width=20, height=0, text="Download", command=lambda: download_files('3', filetypebar(), c.directory),
            border=0, bg='light blue', fg='#ffffff').place(x=120, y=142)
 
 
