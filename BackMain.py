@@ -1,47 +1,36 @@
 from __future__ import unicode_literals
 from DownloadAudio import AudioDownloader
 from DownloadVideo import VideoDownloader
-from GetPath import getsrcPath,getdstPath
+from GetPath import getsrcPath, getdstPath
 from GetSongFromTXT import SongList
 from SearchSong import GetSongUrl
 from FileMover import moveSongs
 
 
 # Main program function
-def down(dm,video_type,user_input):
+def download_files(download_method, video_type, user_input):
 
-    
     url = []  # initialize url list
 
     sourcePath = getsrcPath()  # kanei initialize to directory tis efarmogis
 
-    #dm = download method,menu sto opoio o xristis apofasizei ton tropo me ton opoio yhelei na katebasei ta arxeia tou
-    #dm = input(
-    #    "Please select download method:\n[1] Download via search\n[2] Download via link\n[3] Download via songlist\nEnter method number:")
-
-    # Menu poy o xristis epilegei ton tipo arxeioy pou thelei
-    #video_type = input(
-    #    "PLease select file format\n[1] .mp3\n[2] .m4a\n[3] .mp4\nEnter the number of your prefered file format:")
-
-    if dm == "1":
-        # O xristis briskei to tragoudi pou thelei basei titlou kai sthn synexeia kaleitai i sinartisi GetSongUrl gia na brethei
+    if download_method == "1":
+        # O xristis briskei to tragoudi pou thelei basei titlou kai sthn synexeia kaleitai i sinartisi GetSongUrl() gia na brethei
         # to link tou epilegmenoy tragoydiou
-        songname = user_input  #input("Enter the song's name:")
+        songname = user_input  # input("Enter the song's name:")
         url.append(GetSongUrl(songname))
 
-    elif dm == "2":
+    elif download_method == "2":
         # O xristis bazei kateutheian to link apo to tragoudi poy epithimei na katebasei
         url.append(user_input)
 
     else:
         # To programma fortonei automata ta tragoudia apo thn playlist poy exei ftiaksei o idios o xristis
         url = (SongList(user_input))
-        sourcePath=user_input
+        sourcePath = user_input
 
-    #print("Where do you want to save your file?")
     # rotaei ton xristi gia to directory pou thelei na apothikeusei to arxeio
     destinationPath = getdstPath()
-    #print(destinationPath, " is selected as download directory")
 
     if (video_type == "mp3") or (video_type == "m4a"):
         # Kaleitai i sinartisi me to url gia na kateboun ta arxeia ixou
