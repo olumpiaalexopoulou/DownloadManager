@@ -4,6 +4,7 @@ from pathlib import Path
 
 root = Tk()
 root.geometry('400x240')
+root.eval('tk::PlaceWindow %s center' % root.winfo_toplevel())
 root.iconbitmap(r"Icon/wave.ico")
 root.resizable(0, 0)
 root.title("Download Manager")
@@ -26,7 +27,7 @@ def SearchWindow():
     
     n=StringVar()
     options = ttk.Combobox(w, width = 10, textvariable = n)
-    
+
     options["values"]=(
     "mp3",
     "m4a",
