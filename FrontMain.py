@@ -11,7 +11,7 @@ root.title("Download Manager")
 
 
 def SearchWindow():
-    w = Frame(root, width=400, height=240, bg='#044f64')
+    w = Frame(root, width=400, height=240, bg='#57deff')
     w.place(x=0, y=28)
 
     # entrybox
@@ -43,7 +43,7 @@ def SearchWindow():
 
 
 def LinkWindow():
-    q = Frame(root, width=400, height=240, bg='#077190')
+    q = Frame(root, width=400, height=240, bg='#52c2ff')
     q.place(x=0, y=28)
 
     
@@ -74,7 +74,7 @@ def LinkWindow():
 
 
 def CustomPlaylist():
-    c = Frame(root, width=400, height=240, bg='#519bb1')
+    c = Frame(root, width=400, height=240, bg='#4da6ff')
     c.place(x=0, y=28)
 
     def openfile():
@@ -107,16 +107,16 @@ CustomPlaylist()
 SearchWindow()
 
 
-Button(root, width=19, height=0, text="Search", command=SearchWindow, border=0, bg='#044f64', pady=4,
-       fg='#ffffff', activebackground='#044f64', activeforeground='#003F87').place(x=0, y=0)
+Button(root, width=19, height=0, text="Search", command=SearchWindow, border=0, bg='#57deff', pady=4,
+       fg='#ffffff', activebackground='#57deff', activeforeground='#003F87').place(x=0, y=0)
 
 
-Button(root, width=19, height=0, text="Link", command=LinkWindow, border=0, bg='#077190',pady=4,
-       fg='#ffffff', activebackground='#077190', activeforeground='#ffffff').place(x=133, y=0)
+Button(root, width=19, height=0, text="Link", command=LinkWindow, border=0, bg='#52c2ff',pady=4,
+       fg='#ffffff', activebackground='#52c2ff', activeforeground='#ffffff').place(x=133, y=0)
 
 
-Button(root, width=19, height=0, text="Playlist", command=CustomPlaylist, border=0, bg='#519bb1',pady=4,
-       fg='#ffffff', activebackground='#519bb1', activeforeground='#ffffff').place(x=266, y=0)
+Button(root, width=19, height=0, text="Playlist", command=CustomPlaylist, border=0, bg='#4da6ff',pady=4,
+       fg='#ffffff', activebackground='#4da6ff', activeforeground='#ffffff').place(x=266, y=0)
 
 
 root.mainloop()
