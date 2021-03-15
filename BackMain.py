@@ -5,6 +5,7 @@ from GetPath import getsrcPath, getdstPath
 from GetSongFromTXT import SongList
 from SearchSong import GetSongUrl
 from FileMover import moveSongs
+from message import display
 
 
 # Main program function
@@ -43,4 +44,5 @@ def download_files(download_method, video_type, user_input):
     # Metafora ton arxeion sto katallilo directory
     moveSongs(sourcePath, destinationPath, video_type)
     # Emfanizei sto xristi se poion fakelo briskontai ta arxeia tou
-    print("Your file is at:", destinationPath)
+    # print("Your file is at:", destinationPath)
+    display(destinationPath)
