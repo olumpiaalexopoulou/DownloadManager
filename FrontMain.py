@@ -1,7 +1,6 @@
-from tkinter import Frame, Tk, Entry, Button, NONE, filedialog, messagebox, StringVar, OptionMenu, ttk
+from tkinter import Frame, Tk, Entry, Button, filedialog, messagebox, StringVar, ttk
 from BackMain import download_files
 from pathlib import Path
-import os
 
 root = Tk()
 root.geometry('400x240')
