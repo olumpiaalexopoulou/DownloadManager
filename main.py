@@ -26,6 +26,7 @@ def SearchWindow():
     
     n=StringVar()
     options = ttk.Combobox(w, width = 10, textvariable = n)
+    
     options["values"]=(
     "mp3",
     "m4a",
@@ -101,11 +102,6 @@ def CustomPlaylist():
            border=0, bg='#ffffff', fg='#000000').place(x=120, y=142)
 
 
-LinkWindow()
-CustomPlaylist()
-SearchWindow()
-
-
 Button(root, width=19, height=0, text="Search", command=SearchWindow, border=0, bg='#57deff', pady=4,
        fg='#ffffff', activebackground='#57deff', activeforeground='#003F87').place(x=0, y=0)
 
@@ -117,5 +113,11 @@ Button(root, width=19, height=0, text="Link", command=LinkWindow, border=0, bg='
 Button(root, width=19, height=0, text="Playlist", command=CustomPlaylist, border=0, bg='#4da6ff',pady=4,
        fg='#ffffff', activebackground='#4da6ff', activeforeground='#ffffff').place(x=266, y=0)
 
+
+
+if __name__=="__main__":
+    LinkWindow()
+    CustomPlaylist()
+    SearchWindow()
 
 root.mainloop()
