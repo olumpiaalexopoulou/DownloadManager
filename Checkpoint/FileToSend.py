@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 from tkinter import Tk, Entry, Button, Frame
+import youtube_dl
 import pafy
 
 # Building main window
