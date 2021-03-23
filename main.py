@@ -1,5 +1,6 @@
 from tkinter import Frame, Tk, Entry, Button, filedialog, messagebox, StringVar, ttk
 from BackMain import download_files
+from Translator import rep
 from pathlib import Path
 
 root = Tk()
@@ -10,8 +11,6 @@ root.resizable(0, 0)
 root.title("Download Manager")
 
 options = ["mp3", "m4a", "mp4"]  # file supported formats
-
-#
 
 
 def SearchWindow():
@@ -27,7 +26,7 @@ def SearchWindow():
             s.insert(0, 'Please enter song name...')
 
     def searchbar():
-        search = s.get()
+        search = rep(s.get())
         return search
 
     def filetypebar():
