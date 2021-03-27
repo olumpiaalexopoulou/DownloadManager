@@ -9,7 +9,6 @@ root.eval('tk::PlaceWindow %s center' % root.winfo_toplevel())
 root.iconbitmap(r"Icon/wave.ico")
 root.resizable(0, 0)
 root.title("Download Manager")
-# lalala
 
 options = ["mp3", "m4a", "mp4"]  # file supported formats
 
