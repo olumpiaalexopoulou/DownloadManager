@@ -1,3 +1,0 @@
-pytube
-pafy
-youtube-dl
