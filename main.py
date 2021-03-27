@@ -1,4 +1,4 @@
-from tkinter import Frame, Tk, Entry, Button, filedialog, messagebox, StringVar, ttk
+from tkinter import Frame, Tk, Entry, Button, filedialog, messagebox, ttk
 from BackMain import download_files
 from Translator import rep
 from pathlib import Path
