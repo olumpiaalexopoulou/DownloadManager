@@ -8,7 +8,7 @@ root.geometry("400x240")
 root.eval('tk::PlaceWindow %s center' %
           root.winfo_toplevel())  # Centering main window
 # Changing icon from tkinter default feather icon
-root.iconbitmap(r"wave.ico")
+root.iconbitmap(r"Icon/wave.ico")
 root.title("Download Manager")
 root.resizable(0, 0)  # Can't resize main window
 
