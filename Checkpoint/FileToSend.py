@@ -111,15 +111,41 @@ def SearchWindow():
     Button(w, width=20, height=0, text="Download", command=lambda: download_files('1', filetypebar(), searchbar()),
            border=0, bg='#ffffff', fg='#000000').place(x=120, y=142)
 
+def CustomPlaylist():
+    c = Frame(root, width=400, height=240, bg='#4da6ff')
+    c.place(x=0, y=28)
+
+    def openfile():
+        c.songlist = filedialog.askopenfilename()
+        p = Path(c.songlist)
+        c.directory = p.parent
+        return c.directory
+
+    def filetypebar():
+        ch = optionsbox.get()
+        return ch
+
+    optionsbox = ttk.Combobox(c, width=10, value=options)
+    optionsbox.current(0)
+    optionsbox.place(x=150, y=92)
+
+    Button(c, width=20, height=0, text="Select File", command=lambda: openfile(),
+           border=0, bg='#ffffff', fg='#000000').place(x=120, y=42)
+    Button(c, width=20, height=0, text="Download", command=lambda: download_files('3', filetypebar(), c.directory),
+           border=0, bg='#ffffff', fg='#000000').place(x=120, y=142)
+
 LinkWindow()
 SearchWindow()
+CustomPlaylist()
 
-Button(root, width=28, height=0, text="Link", command=LinkWindow, border=0, bg='#52c2ff', pady=4,
-       fg='#ffffff', activebackground='#52c2ff', activeforeground='#ffffff').place(x=200, y=0)
+Button(root, width=19, height=0, text="Link", command=LinkWindow, border=0, bg='#52c2ff', pady=4,
+       fg='#ffffff', activebackground='#52c2ff', activeforeground='#ffffff').place(x=133, y=0)
 
-Button(root, width=28, height=0, text="Search", command=SearchWindow, border=0, bg='#57deff', pady=4,
+Button(root, width=19, height=0, text="Search", command=SearchWindow, border=0, bg='#57deff', pady=4,
        fg='#ffffff', activebackground='#57deff', activeforeground='#ffffff').place(x=0, y=0)
 
-
+Button(root, width=19, height=0, text="Playlist", command=CustomPlaylist, border=0, bg='#4da6ff', pady=4,
+       fg='#ffffff', activebackground='#4da6ff', activeforeground='#ffffff').place(x=266, y=0)
+       
 # Keeps root window running
 root.mainloop()
