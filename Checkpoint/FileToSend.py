@@ -110,7 +110,7 @@ def SearchWindow():
 
     Button(w, width=20, height=0, text="Download", command=lambda: download_files('1', filetypebar(), searchbar()),
            border=0, bg='#ffffff', fg='#000000').place(x=120, y=142)
-           
+
 def CustomPlaylist():
     
     c = Frame(root, width=400, height=240, bg='#4da6ff')
