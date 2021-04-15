@@ -7,7 +7,7 @@ import re
 
 # Building main window
 root = Tk()
-root.geometry("400x240")
+root.geometry("400x240") 
 root.eval('tk::PlaceWindow %s center' % root.winfo_toplevel())  # Centering main window
 # Changing icon from tkinter default feather icon
 root.iconbitmap(r"Checkpoint/wave.ico")
