@@ -146,6 +146,6 @@ Button(root, width=19, height=0, text="Search", command=SearchWindow, border=0, 
 
 Button(root, width=19, height=0, text="Playlist", command=CustomPlaylist, border=0, bg='#4da6ff', pady=4,
        fg='#ffffff', activebackground='#4da6ff', activeforeground='#ffffff').place(x=266, y=0)
-       
+
 # Keeps root window running
 root.mainloop()
