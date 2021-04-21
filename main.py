@@ -1,7 +1,9 @@
-from tkinter import Frame, Tk, Entry, Button, filedialog, messagebox, ttk
+from tkinter import Frame, Tk, Entry, Button, filedialog, ttk
 from BackMain import download_files
 from Translator import rep
+from message import TitleError, LinkError
 from pathlib import Path
+import sys
 
 root = Tk()
 root.geometry('400x240')
@@ -27,7 +29,12 @@ def SearchWindow():
 
     def searchbar():
         search = rep(s.get())
-        return search
+        while True:
+            if(search == "Please enter song name...") or (sys.getsizeof(search) == 49):
+                TitleError()
+                break
+            else:
+                return search
 
     def filetypebar():
         ch = optionsbox.get()
@@ -56,11 +63,16 @@ def LinkWindow():
 
     def on_leave(e):
         if l.get() == '':
-            l.insert(0, 'Please enter song name...')
+            l.insert(0, 'Please enter song url...')
 
     def searchbar():
         search = l.get()
-        return search
+        while True:
+            if(search == "Please enter song url...") or (sys.getsizeof(search) == 49):
+                LinkError()
+                break
+            else:
+                return search
 
     def filetypebar():
         ch = optionsbox.get()
