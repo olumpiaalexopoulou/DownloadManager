@@ -1,9 +1,10 @@
+from message import TitleError, LinkError, FileError, FileEmptyError
 from tkinter import Frame, Tk, Entry, Button, filedialog, ttk
 from BackMain import download_files
 from Translator import rep
-from message import TitleError, LinkError
 from pathlib import Path
 import sys
+import os
 
 root = Tk()
 root.geometry('400x240')
@@ -99,9 +100,15 @@ def CustomPlaylist():
 
     def openfile():
         c.songlist = filedialog.askopenfilename()
-        p = Path(c.songlist)
-        c.directory = p.parent
-        return c.directory
+        if (c.songlist.endswith(".txt")):
+            if (os.path.getsize(c.songlist) == 0):
+                FileEmptyError()
+            else:
+                p = Path(c.songlist)
+                c.directory = p.parent
+                return c.directory
+        else:
+            FileError()
 
     def filetypebar():
         ch = optionsbox.get()
