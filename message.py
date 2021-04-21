@@ -18,3 +18,11 @@ def TitleError():
 
 def LinkError():
     messagebox.showinfo('Friendly Remainder', "Please enter a link")
+
+
+def FileError():
+    messagebox.showinfo('Friendly Remainder', "Please use a .txt file")
+
+
+def FileEmptyError():
+    messagebox.showinfo('Friendly Remainder', "This file is empty")
