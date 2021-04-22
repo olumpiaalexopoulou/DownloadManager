@@ -4,17 +4,14 @@
 
 - Add all file to a single one to export .exe
 
-- na katebazei tragoudi me bash thn hmeromhnia thn twrinh 
+- na katebazei tragoudi me bash thn hmeromhnia thn twrinh
 
 - den exei kalh analush to mp4
 
-- exceptions 
+- youtube video
 
-- youtube video 
+- istoselida
 
-- istoselida 
+- new account github
 
-- new account github 
-
-- teliki anafora 
-
+- teliki anafora
