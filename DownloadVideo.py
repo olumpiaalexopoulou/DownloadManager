@@ -7,5 +7,5 @@ def VideoDownloader(url):
     for u in url:
 
         url = YouTube(u)
-        mp4 = url.streams.first()
-        mp4.download()
+        url.streams.filter(
+            progressive=True, file_extension="mp4").order_by("resolution").desc().first().download()
