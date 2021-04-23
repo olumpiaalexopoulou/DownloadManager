@@ -1,15 +1,16 @@
 from message import TitleError, LinkError, FileError, FileEmptyError
-from tkinter import Frame, Tk, Entry, Button, filedialog, ttk
+from tkinter import Frame, Tk, Entry, Button, filedialog, ttk,
 from BackMain import download_files
-from Translator import rep
+from Translator import trans
 from pathlib import Path
 import sys
 import os
 
+
 root = Tk()
 root.geometry('400x240')
 root.eval('tk::PlaceWindow %s center' % root.winfo_toplevel())
-root.iconbitmap(r"Icon/wave.ico")
+root.iconbitmap(r"Icon\wave.ico")
 root.resizable(0, 0)
 root.title("Download Manager")
 
@@ -29,7 +30,7 @@ def SearchWindow():
             s.insert(0, 'Please enter song name...')
 
     def searchbar():
-        search = rep(s.get())
+        search = trans(s.get())
         while True:
             if(search == "Please enter song name...") or (sys.getsizeof(search) == 49):
                 TitleError()
