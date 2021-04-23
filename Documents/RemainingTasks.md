@@ -1,13 +1,9 @@
-- Save directory
+- Export to exe
 
-- Add all files to a single one to export .exe
+- YouTube video
 
-- na katebazei tragoudi me bash thn hmeromhnia thn twrinh
+- Website
 
-- youtube video
+- new github account
 
-- istoselida
-
-- new account github
-
-- teliki anafora
+- Final report
