@@ -11,38 +11,35 @@ from message import display
 # Main program function
 def download_files(download_method, video_type, user_input):
 
-    url = []  # initialize url list
+    url = []  # initialize the url list
 
-    sourcePath = getsrcPath()  # kanei initialize to directory tis efarmogis
+    sourcePath = getsrcPath()  # initialize program directory
 
     if download_method == "1":
-        # O xristis briskei to tragoudi pou thelei basei titlou kai sthn synexeia kaleitai i sinartisi GetSongUrl() gia na brethei
-        # to link tou epilegmenoy tragoydiou
-        songname = user_input  # input("Enter the song's name:")
+        # Getting the video's url via the GetSongUrl function
+        songname = user_input
         url.append(GetSongUrl(songname))
 
     elif download_method == "2":
-        # O xristis bazei kateutheian to link apo to tragoudi poy epithimei na katebasei
+
         url.append(user_input)
 
     else:
-        # To programma fortonei automata ta tragoudia apo thn playlist poy exei ftiaksei o idios o xristis
+        # Loading songs from the .txt file
         url = (SongList(user_input))
         sourcePath = user_input
 
-    # rotaei ton xristi gia to directory pou thelei na apothikeusei to arxeio
+    # Asking where to save the files
     destinationPath = getdstPath()
 
     if (video_type == "mp3") or (video_type == "m4a"):
-        # Kaleitai i sinartisi me to url gia na kateboun ta arxeia ixou
         AudioDownloader(url)
 
     else:
-        # Kaleitai i sinartisi me to url gia na kateboun ta arxeia video
         VideoDownloader(url)
 
-    # Metafora ton arxeion sto katallilo directory
+    # Moving files to "save" directory
     moveSongs(sourcePath, destinationPath, video_type)
-    # Emfanizei sto xristi se poion fakelo briskontai ta arxeia tou
-    # print("Your file is at:", destinationPath)
+
+    # Display "save" directory
     display(destinationPath)
