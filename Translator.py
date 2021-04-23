@@ -1,4 +1,4 @@
-def rep(phrase):
+def trans(phrase):
     translation = ""
     for i in phrase:
         if i in "αΑάΆ":
