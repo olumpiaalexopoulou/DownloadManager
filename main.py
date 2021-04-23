@@ -1,5 +1,5 @@
 from message import TitleError, LinkError, FileError, EmptyFileError
-from tkinter import Frame, Tk, Entry, Button, filedialog, ttk,
+from tkinter import Frame, Tk, Entry, Button, filedialog, ttk
 from BackMain import download_files
 from Translator import trans
 from pathlib import Path
