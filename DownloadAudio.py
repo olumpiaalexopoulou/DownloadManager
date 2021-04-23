@@ -2,8 +2,6 @@ import pafy
 
 
 def AudioDownloader(url):
-
-    # Xrisimopoioyme to loop se periptosi poy yparxoun perissotera apo ena tragoudia
-    # Me me tin methodo new kai thn getbestaudio katebazoume thn kalhterh poothta ixoy apo to YouTube
+    # Using a loop in case there are more than one urls
     for u in url:
         pafy.new(u).getbestaudio().download()

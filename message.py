@@ -3,7 +3,7 @@ from tkinter import Tk
 
 message = Tk()
 message.eval('tk::PlaceWindow %s center' % message.winfo_toplevel())
-# message.iconbitmap(r"wave.ico")
+message.iconbitmap(r"Icon/wave.ico")
 message.withdraw()
 
 
@@ -24,5 +24,5 @@ def FileError():
     messagebox.showinfo('Friendly Remainder', "Please use a .txt file")
 
 
-def FileEmptyError():
+def EmptyFileError():
     messagebox.showinfo('Friendly Remainder', "This file is empty")

@@ -1,4 +1,4 @@
-from message import TitleError, LinkError, FileError, FileEmptyError
+from message import TitleError, LinkError, FileError, EmptyFileError
 from tkinter import Frame, Tk, Entry, Button, filedialog, ttk,
 from BackMain import download_files
 from Translator import trans
@@ -103,7 +103,7 @@ def CustomPlaylist():
         c.songlist = filedialog.askopenfilename()
         if (c.songlist.endswith(".txt")):
             if (os.path.getsize(c.songlist) == 0):
-                FileEmptyError()
+                EmptyFileError()
             else:
                 p = Path(c.songlist)
                 c.directory = p.parent

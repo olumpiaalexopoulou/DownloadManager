@@ -3,14 +3,13 @@ from pathlib import Path
 import os
 
 
-
 def getsrcPath():
-    # Epistrefei to current directoy
+    # Returns current directoy
     return os.getcwd()
 
 
 def getdstPath():
-    # Epistrefei to teliko directory
+    # Returns "save" directory
     save_directory = str(Path.home()/"Downloads")
     #save_directory = filedialog.askdirectory()
     return save_directory

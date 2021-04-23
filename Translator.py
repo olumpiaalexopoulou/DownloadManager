@@ -1,3 +1,4 @@
+# Replacing greek characters with english ones
 def trans(phrase):
     translation = ""
     for i in phrase:
