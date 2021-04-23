@@ -10,6 +10,6 @@ def getsrcPath():
 
 def getdstPath():
     # Returns "save" directory
-    save_directory = str(Path.home()/"Downloads")
-    #save_directory = filedialog.askdirectory()
+    # save_directory = str(Path.home()/"Downloads")
+    save_directory = filedialog.askdirectory()
     return save_directory
