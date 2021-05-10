@@ -10,7 +10,7 @@ import os
 root = Tk()
 root.geometry('400x240')
 root.eval('tk::PlaceWindow %s center' % root.winfo_toplevel())
-root.iconbitmap(r"Icon\wave.ico")
+# root.iconbitmap(r"Icon\wave.ico")
 root.resizable(0, 0)
 root.title("Download Manager")
 
